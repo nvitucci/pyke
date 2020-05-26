@@ -10,3 +10,6 @@ MANIFEST
 
 # IDE
 .idea
+
+# virtualenv
+venv
