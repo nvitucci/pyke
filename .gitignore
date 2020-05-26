@@ -1,5 +1,3 @@
-syntax: glob
-
 .pyhist
 *.pyc
 *.pyo
@@ -9,3 +7,6 @@ build
 dist
 compiled_krb
 MANIFEST
+
+# IDE
+.idea
