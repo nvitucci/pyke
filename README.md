@@ -1,5 +1,9 @@
 # Pyke: Python Knowledge Engine
 
+> This is a mirror of the original [Sourceforge project](https://sourceforge.net/projects/pyke/), to be used as a reference and for the creation and maintenance of the PyPI package. All credit goes to [Bruce Frederiksen](https://github.com/dangyogi), the original author.
+>
+> The code in this repo is based only on the Python 3 version of PyKE, since Python 2 has been deprecated in 2020. The code related to Python 2 may therefore be removed.
+
 Version: 1.1.1
 
 Both forward-chaining and backward-chaining rules (which may include python
