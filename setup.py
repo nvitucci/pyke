@@ -4,7 +4,7 @@ import setuptools
 from distutils.core import setup
 
 setup(
-    name="pyke",
+    name="pyke3",
     version="1.1.1",
     packages=['pyke', 'pyke.krb_compiler', 'pyke.krb_compiler.ply'],
     package_data={
