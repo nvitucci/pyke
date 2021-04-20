@@ -10,7 +10,7 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
+import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
@@ -51,8 +51,25 @@ html_theme = 'sphinxdoc'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+# -- Custom behaviour
+
+
+def fix_ref(ref, html_dir):
+    """Fixes a reference prepending it with a relative path (if necessary)
+    """
+    # Is it either another link or an external page?
+    if ref.rstrip()[-1] == '_' or ref.startswith('http://'):
+        return ref
+    else:
+        return os.path.join(html_dir, ref)
+
+
+source_dir = os.path.dirname(os.path.relpath(__file__, 'pyke/doc/sphinx/'))
+html_dir = os.path.join(source_dir, '../build/html')
+
 # Example from https://stackoverflow.com/a/61694897
 rst_epilog = ""
-# Read link all targets from file
 with open('links.rst') as f:
-    rst_epilog += f.read()
+    for line in f:
+        link, ref = line.split(':', 1)
+        rst_epilog += link + ": " + fix_ref(ref, html_dir)
