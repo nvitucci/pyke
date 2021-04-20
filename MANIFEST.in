@@ -1,8 +1,12 @@
 include *
 graft *
 #exclude .hgtags .hgignore
+exclude .gitignore
 prune .hg
 prune dist
+prune .git
+prune .github
+prune venv
 prune */compiled_krb
 prune */*/compiled_krb
 prune */*/*/compiled_krb
